@@ -1,0 +1,1 @@
+export { AddNewModal } from './add-new-modal.component';

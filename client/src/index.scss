@@ -1,0 +1,8 @@
+@import './style/variables.scss';
+
+html, body, div, span, header, p, h1, form, button {
+  padding: 0;
+  margin: 0;
+  font-size: 62.5%;
+  font-family: $generalFont;
+}

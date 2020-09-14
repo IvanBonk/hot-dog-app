@@ -1,0 +1,35 @@
+@import '../../../style/variables.scss';
+
+.modalTitle {
+  font-size: px-to-rem(28px);
+}
+
+.inputBlock {
+  margin: 10px 0;
+}
+
+.buttonsBlock {
+  margin-top: 40px;
+
+  &_button {
+    background-color: $color-secondary;
+    color: $color-primary;
+    border: none;
+    height: 30px;
+    padding: 0 10px;
+    margin: 0 2px;
+    font-size: px-to-rem(20px);
+
+    &:hover {
+      cursor: pointer;
+      background-color: $color-secondary-hover;
+    }
+    &:active {
+      box-shadow: 0 0 2px 1px $color-secondary;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

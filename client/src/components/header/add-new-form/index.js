@@ -1,0 +1,1 @@
+export { AddNewForm } from './add-new-form.component';

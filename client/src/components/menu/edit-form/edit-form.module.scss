@@ -1,0 +1,30 @@
+@import '../../../style/variables.scss';
+
+.formInput {
+  width: 100%;
+  box-sizing: border-box;
+  height: 30px;
+  padding: 5px;
+}
+
+.errorMessage {
+  color: #ec2c2c;
+  font-size: px-to-rem(22px);
+  margin: 10px;
+}
+
+.inputError {
+  border: 2px solid #ec2c2c;
+}
+
+.formTextarea {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100px;
+  padding: 5px;
+}
+
+.button {
+  margin: 5px 0;
+  @include button;
+}

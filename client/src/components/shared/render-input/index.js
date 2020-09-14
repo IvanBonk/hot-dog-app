@@ -1,0 +1,1 @@
+export { RenderInput } from './render-input.component';

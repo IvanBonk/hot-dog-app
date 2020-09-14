@@ -7,6 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 app.post('/hot-dogs', async (req, res) => {
+
   try {
     const {
       name,
@@ -26,7 +27,7 @@ app.post('/hot-dogs', async (req, res) => {
 
 app.get('/hot-dogs', async (req, res) => {
   try {
-    const allHotDogs = await pool.query('SELECT * FROM hot_dogs;');
+    const allHotDogs = await pool.query('SELECT * FROM hot_dogs ORDER BY id;');
     res.json(allHotDogs.rows);
   } catch (error) {
     console.warn(error.message);
