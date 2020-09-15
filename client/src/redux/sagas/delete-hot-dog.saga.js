@@ -8,9 +8,12 @@ export function* deleteHotDogWorker({ payload }) {
     yield put({
       type: types.DELETE_HOT_DOG.SUCCESS,
       payload: payload,
-    })
+    });
   } catch (error) {
-      console.log(error);
+      yield put({
+        type: types.DELETE_HOT_DOG.ERROR,
+        payload: error.message,
+      });
   }
 }
 

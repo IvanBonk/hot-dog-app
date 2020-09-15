@@ -10,7 +10,5 @@ export const httpRequest = (address, method, params = {}) => {
     url: address,
     data: params
   }).then(response => response)
-  .catch((error) => {
-    console.log(error.message);
-  })
+  .catch((error) => {throw Error(error)})
 }

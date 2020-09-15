@@ -8,9 +8,12 @@ export function* postHotDogWorker({ payload }) {
     yield put({
       type: types.POST_HOT_DOG.SUCCESS,
       payload: response.data
-    })
+    });
   } catch (error) {
-      console.log(error);
+      yield put({
+        type: types.POST_HOT_DOG.ERROR,
+        payload: error.message,
+      });
   }
 }
 

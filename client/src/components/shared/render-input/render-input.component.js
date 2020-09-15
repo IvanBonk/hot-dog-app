@@ -8,7 +8,11 @@ export const RenderInput = ({
   meta: {touched, error}
 }) => (
   <div>
-    <input className={`${style.formInput} ${error && touched && style.inputError}`} {...input} placeholder={label} type={type}/>
+    <input 
+      className={`${style.formInput} ${error && touched && style.inputError}`} 
+      {...input} 
+      placeholder={label} 
+      type={type}/>
     {touched && (error && <span className={style.errorMessage}>{error}</span>)}
   </div>
 );

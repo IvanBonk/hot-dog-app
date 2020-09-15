@@ -4,11 +4,15 @@ import { connect } from 'react-redux';
 import style from './edit-form.module.scss';
 import { RenderInput } from '../../shared/render-input';
 import { RenderTextarea } from '../../shared/render-textarea';
-import { required, number, maxLength250, maxLength30 } from '../../../helpers/validators';
+import { required, number, maxLength250, maxLength30, removeFromList, nameIsExist } from '../../../helpers/validators';
 
 let _EditForm = (props) => {
 
-  const { handleSubmit, handleDelete, hotDogsList} = props;
+  const { handleSubmit, handleDelete, hotDogsList, id} = props;
+
+  const exist = (value) => {
+    return nameIsExist(value, removeFromList(hotDogsList, id))
+  }
 
   return (
     <form onSubmit={handleSubmit}>
@@ -23,7 +27,7 @@ let _EditForm = (props) => {
         name="name"
         type="text"
         component={RenderInput}
-        validate={[required, maxLength30]}
+        validate={[required, maxLength30, exist]}
         label="Enter hot-dog name"
       />
       <Field
@@ -49,7 +53,7 @@ let _EditForm = (props) => {
 }
 
 _EditForm = reduxForm({
-  form: 'editMenuItem'
+  destroyOnUnmount: false
 })(_EditForm);
 
 const mapStateToProps = (state, { id }) => {

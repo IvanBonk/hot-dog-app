@@ -2,10 +2,18 @@ import React from 'react';
 import style from './add-new-form.module.scss';
 import { Field, reduxForm } from 'redux-form';
 import { RenderInput } from '../../shared/render-input';
-import { required, maxLength30, maxLength250, number } from '../../../helpers/validators';
+import { required, maxLength30, maxLength250, number, nameIsExist } from '../../../helpers/validators';
+import { useSelector } from 'react-redux';
 
 
 let _AddNewForm = ({ handleSubmit, handleCancel }) => {
+
+  const hotDogsList = useSelector(state => state.hotDogs.hotDogsList);
+  
+  const exist = (value) => {
+    return nameIsExist(value, hotDogsList);
+  }
+
   return (
     <form onSubmit={handleSubmit}>
       <h1 className={style.modalTitle}>Add new hot-dog</h1>
@@ -14,7 +22,7 @@ let _AddNewForm = ({ handleSubmit, handleCancel }) => {
           name='name'
           type='text'
           component={RenderInput}
-          validate={[required, maxLength30]}
+          validate={[required, maxLength30, exist]}
           label='Name'
         />
       </div>

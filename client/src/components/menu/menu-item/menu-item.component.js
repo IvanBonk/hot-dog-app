@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import style from './menu-item.module.scss';
 import { EditForm } from '../edit-form';
@@ -10,7 +10,6 @@ export const MenuItem = (props) => {
 
   const dispatch = useDispatch();
 
-  // const [ isEditMode, setIsEditMode ] = useState(false);
   const openEditFormId = useSelector(state => state.hotDogs.openEditFormId); 
 
   const handleSubmit = (values) => {
@@ -37,13 +36,10 @@ export const MenuItem = (props) => {
       {openEditFormId !== id && 
         <button 
           className={style.menuItem_button}
-          onClick={() => {
-            dispatch(handleEditForm(id));
-            }}
-        >
+          onClick={() => { dispatch(handleEditForm(id)); }}>
           Edit
         </button>}
-      {openEditFormId === id && <EditForm onSubmit={handleSubmit} handleDelete={() => handleDelete()} id={id} />}
+      {openEditFormId === id && <EditForm form={name} onSubmit={handleSubmit} handleDelete={() => handleDelete()} id={id} data={props.content} />}
     </div>
   );
 }
