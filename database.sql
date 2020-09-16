@@ -1,4 +1,4 @@
-CREATE DATABASE hot_dog_app;
+-- CREATE DATABASE hot_dog_app;
 
 CREATE TABLE hot_dogs
 (
