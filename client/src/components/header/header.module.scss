@@ -1,60 +1,61 @@
 @import '../../style/variables.scss';
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  box-sizing: border-box;
-  height: 55px;
-  width: 100%;
-  padding: 0 35px;
-  background-color: $color-primary;
-  border-bottom: 1px solid $color-border;
-  box-shadow: 0 0 6px 1px $color-border;
-  font-family: Arial, sans-serif;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	box-sizing: border-box;
+	height: 55px;
+	width: 100%;
+	padding: 0 35px;
+	background-color: $color-primary;
+	border-bottom: 1px solid $color-border;
+	box-shadow: 0 0 6px 1px $color-border;
+	font-family: Arial, sans-serif;
 
-  &_logo {
-    display: flex;
-    align-items: center;
+	&_logo {
+		display: flex;
+		align-items: center;
 
-    &_image {
-      height: 30px;
-      margin-right: 10px;
-    }
+		&_image {
+			height: 30px;
+			margin-right: 10px;
+		}
 
-    &_name {
-      height: 30px;
-      line-height: 30px;
-      width: 70px;
-      font-size: px-to-rem(20px);
-      text-align: center;
-      background-color: $color-logo;
-      font-weight: bold;
-      color: $color-primary;
-      letter-spacing: 2px;
-    }
-  }
+		&_name {
+			height: 30px;
+			line-height: 30px;
+			width: 70px;
+			font-size: px-to-rem(20px);
+			text-align: center;
+			background-color: $color-logo;
+			font-weight: bold;
+			color: $color-primary;
+			letter-spacing: 2px;
+		}
+	}
 
-  &_button {
-    font-size: px-to-rem(19px);
-    border: none;
-    background-color: inherit;
-    border-radius: 10px;
-    height: 20px;
-    width: 100px;
+	&_button {
+		font-size: px-to-rem(19px);
+		border: none;
+		background-color: inherit;
+		border-radius: 10px;
+		height: 20px;
+		width: 100px;
 
-    &:hover {
-      cursor: pointer;
-      border: 1px solid $color-border;
-    }
+		&:hover {
+			cursor: pointer;
+			border: 1px solid $color-border;
+		}
 
-    &:active {
-      box-shadow: 0 0 5px 1px $color-border;
-    }
-    &:focus {
-      outline: none;
-    }
-  }
+		&:active {
+			box-shadow: 0 0 5px 1px $color-border;
+		}
+
+		&:focus {
+			outline: none;
+		}
+	}
 }

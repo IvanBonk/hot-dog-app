@@ -10,10 +10,10 @@ export function* postHotDogWorker({ payload }) {
       payload: response.data
     });
   } catch (error) {
-      yield put({
-        type: types.POST_HOT_DOG.ERROR,
-        payload: error.message,
-      });
+    yield put({
+      type: types.POST_HOT_DOG.ERROR,
+      payload: error.message,
+    });
   }
 }
 

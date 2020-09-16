@@ -3,6 +3,7 @@ import style from './header.module.scss';
 import { AddNewModal } from './add-new-modal';
 import Loader from 'react-loader-spinner';
 import { useSelector } from 'react-redux';
+import { colors } from '../../constants/colors';
 
 export const Header = () => {
 
@@ -17,29 +18,29 @@ export const Header = () => {
 
   return (
     <>
-      <header className={style.header}>
-        <div className={style.header_logo}>
-          <img 
-            className={style.header_logo_image} 
+      <header className={ style.header }>
+        <div className={ style.header_logo }>
+          <img
+            className={ style.header_logo_image }
             src='https://pngimg.com/uploads/hot_dog/hot_dog_PNG10232.png'
             alt='logotype'
-            />
-          <div className={style.header_logo_name}>CRUD</div>
+          />
+          <div className={ style.header_logo_name }>{ 'CRUD' }</div>
         </div>
-        <Loader 
-          visible={loading}
+        <Loader
+          visible={ loading }
           type="ThreeDots"
-          color="#404040"
-          height={25}
-          width={80}
+          color={ colors.loaderColor }
+          height={ 25 }
+          width={ 80 }
         />
         <div>
-          <button 
-            className={style.header_button}
-            onClick={handleModal}>Add hot-dog</button>
+          <button
+            className={ style.header_button }
+            onClick={ handleModal }>{ 'Add hot-dog' }</button>
         </div>
       </header>
-      {isModalOpen && <AddNewModal handleModal={handleModal}/>}
+      {isModalOpen && <AddNewModal handleModal={ handleModal } /> }
     </>
   )
 }

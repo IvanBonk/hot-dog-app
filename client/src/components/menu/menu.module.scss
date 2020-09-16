@@ -1,20 +1,23 @@
 @import '../../style/variables.scss';
 
 .menu {
-  width: 90%;
-  margin: 55px auto;
+	width: 90%;
+	margin: 55px auto;
 
-  &_title {
-    height: 50px;
-    line-height: 50px;
-    font-size: 35px;
-    margin-bottom: 13px;
-    border-bottom: 2px solid $color-horizontal-line;
-  }
+	&_head {
+		height: 50px;
+		line-height: 50px;
+		margin-bottom: 13px;
+		border-bottom: 2px solid $color-horizontal-line;
 
-  &_hotDogList {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 10px;
-  }
+		&_title {
+			font-size: px-to-rem(32px);
+		}
+	}
+
+	&_hotDogList {
+		display: flex;
+		flex-wrap: wrap;
+		padding: 0 10px;
+	}
 }

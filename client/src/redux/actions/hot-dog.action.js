@@ -11,7 +11,7 @@ export const postHotDog = (hotDog) => {
     type: types.POST_HOT_DOG.FETCH,
     payload: hotDog,
   }
-} 
+}
 
 export const deleteHotDog = (id) => {
   return {

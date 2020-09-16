@@ -15,11 +15,11 @@ export const Menu = () => {
 
   useEffect(() => {
     dispatch(getHotDogs());
-  },[dispatch]);
-  
+  }, [dispatch]);
+
   useEffect(() => {
-    if(errorMessage) {
-      toast.error(errorMessage,{
+    if (errorMessage) {
+      toast.error(errorMessage, {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -29,18 +29,18 @@ export const Menu = () => {
         progress: undefined,
       })
     }
-  },[errorMessage])
+  }, [errorMessage])
 
   return (
-    <div className={style.menu}>
-      <div className={style.menu_title}>
-        <h1>All hot-dogs</h1>
+    <div className={ style.menu }>
+      <div className={ style.menu_head }>
+        <h1 className={ style.menu_head_title }>{ 'All hot-dogs' }</h1>
       </div>
-      {hotDogsList && <div className={style.menu_hotDogList}>
-        {hotDogsList.map((item) => {
-          return <MenuItem key={item.id} content={item}/>
-        })}
-      </div>}
+      {hotDogsList && <div className={ style.menu_hotDogList }>
+        { hotDogsList.map((item) => {
+          return <MenuItem key={ item.id } content={ item } />
+        }) }
+      </div> }
     </div>
   );
 }

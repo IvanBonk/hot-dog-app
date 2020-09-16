@@ -10,10 +10,10 @@ export function* deleteHotDogWorker({ payload }) {
       payload: payload,
     });
   } catch (error) {
-      yield put({
-        type: types.DELETE_HOT_DOG.ERROR,
-        payload: error.message,
-      });
+    yield put({
+      type: types.DELETE_HOT_DOG.ERROR,
+      payload: error.message,
+    });
   }
 }
 
