@@ -9,8 +9,9 @@ export const AddNewModal = ({ handleModal }) => {
   const dispatch = useDispatch();
 
   const handleSubmit = (values) => {
+    const newItem = { ...values, name: values.name.trim() }
     handleModal();
-    dispatch(postHotDog(values));
+    dispatch(postHotDog(newItem));
   }
 
 
