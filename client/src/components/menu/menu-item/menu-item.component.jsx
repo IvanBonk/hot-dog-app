@@ -13,7 +13,8 @@ export const MenuItem = ({ content }) => {
   const openEditFormId = useSelector(state => state.hotDogs.openEditFormId);
 
   const handleSubmit = (values) => {
-    dispatch(updateHotDog(values));
+    const edited = { ...values, name: values.name.trim() }
+    dispatch(updateHotDog(edited));
     dispatch(handleEditForm(null));
   }
 

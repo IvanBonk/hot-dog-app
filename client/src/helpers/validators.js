@@ -19,6 +19,6 @@ export const removeFromList = (list, id) => list.filter((obj) => obj.id !== id);
 
 
 export const nameIsExist = (value, list) =>
-  list.filter((obj) => obj.name === value).length
+  list.filter((obj) => obj.name.toUpperCase() === value.trim().toUpperCase()).length
     ? 'Name is already exist!'
     : undefined;
